@@ -20,6 +20,9 @@ mongoose.connection.on('error', (err) => {
 
 app.use('/api/users', userRoutes);
 
+// Servir archivos HTML estáticos desde el directorio 'public'
+app.use(express.static('public'));
+
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
